@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { AuthServiceProvider } from '../../providers/auth-service';
+import { ResultsymPage } from '../resultsym/resultsym';
 
 /**
  * Generated class for the RegisterPage page.
@@ -15,9 +18,42 @@ import { HomePage } from '../home/home';
   templateUrl: 'register.html',
 })
 export class RegisterPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  userData = {
+    "username": "",
+    "password": "",
+    "name": "",
+    "status": "",
+    "confirmPassword": "",
+    "email" :""
+  };
+  public resposeData:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authService:AuthServiceProvider,public toastCtrl:ToastController) {
   }
+  register(){
+    if(this.userData.name && (this.userData.password==this.userData.confirmPassword) && this.userData.username && this.userData.email){
+     
+     this.authService.PostData(this.userData, "register").then((result) =>{
+       this.resposeData = result;
+       console.log(this.resposeData);
+       if(this.resposeData.userData){
+         this.navCtrl.push(HomePage)
+       
+       }
+       else{
+         this.presentToast("ชื่อนี้ถูกใช้งานแล้ว");
+        
+       }
+      }, (err) => {
+        this.presentToast("ไม่สามารถเชื่อมต่ออินเตอร์เน็ต");
+      });
+    }
+      else{
+
+    this.presentToast("กรุณากรอกข้อมูลให้ครบถ้วน และตรวจสอบรหัสผ่านไม่ถูกต้อง")
+      }
+  }
+    
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
@@ -26,4 +62,12 @@ export class RegisterPage {
     this.navCtrl.push(HomePage);
   
   }
+
+  presentToast(msg) {
+    let toast = this
+      .toastCtrl
+      .create({message: msg, duration: 2000});
+    toast.present();
+  }
+  
 }

@@ -8,12 +8,17 @@
 
   <ion-navbar>
     <ion-title>ปรึกษาหมอ</ion-title>
+    <ion-buttons right (click)="create()">
+      <button ion-button icon-only outline color="dark">
+        <ion-icon ios="ios-add" md="md-add"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding text-center>
     <ion-card>
 
         <ion-item>
@@ -32,4 +37,7 @@
 
         </ion-card>
 
+      
+        <button ion-button  color="secondary" (click)="create()">สร้างกระทู้</button>
+        <button ion-button (click)="backhomeee()">ยกเลิก</button>
 </ion-content>

@@ -15,13 +15,7 @@
 <ion-nav id="nav" #content [root]="rootPage" swipeBackEnabled="false"></ion-nav>
 <ion-header>
   <ion-navbar color="primary">
-    <ion-item no-lines color="primary" style="text-align:center">
-      HOME  
-      <button ion-button clear icon-only item-end menuToggle>
-        <ion-icon name="menu" color="light">
-        </ion-icon>
-      </button>
-    </ion-item>
+   
 
     <ion-toolbar color="primary">
       LOGIN
@@ -35,7 +29,7 @@
 <ion-content padding>
 
   <ion-grid style="text-align:center;">
-    <ion-row style="font-weight:bold;background-color:#f9fff5;font-size:20px;">
+    <ion-row style="font-weight:bold;background-color:#ffffff;font-size:20px;">
      
         <div (click)="goToPrePlay()">
             <img src="../../assets/imgs/logo.jpg" style="text-align:center;" />
@@ -43,20 +37,28 @@
             <br>
 
       <ion-item >
-        <ion-input placeholder="Username"></ion-input>
+        <ion-label><ion-icon name="person"></ion-icon></ion-label>
+        <ion-input [(ngModel)]="userData.username" placeholder="ชื่อผู้ใช้" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input type="password" placeholder="Password"></ion-input>              
+          <ion-label><ion-icon name="lock"></ion-icon></ion-label>
+          <ion-input [(ngModel)]="userData.password" placeholder="รหัสผ่าน" type="password"></ion-input>         
       </ion-item>
-
+      <ion-item>
+        <ion-label>จดจำรหัสผ่าน</ion-label>
+        <ion-checkbox checked="true"></ion-checkbox>
+      </ion-item>
+      <button ion-button color="dark" clear (click)="forgot()">ลืมรหัสผ่าน</button>
+      <br>
+      <br>
       
-      <button ion-button round (click)="generateSN1()">Login</button>  
+      <button ion-button round (click)="login()">เข้าสู่ระบบ</button>  
       <button ion-button round (click)="nextregister()">ลงทะเบียน</button>
       
 
           </div>
-   
+          
     
         
      

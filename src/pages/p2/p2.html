@@ -15,6 +15,11 @@
 
 <ion-content padding text-center>
     <ion-item>
+        <ion-label>วันที่</ion-label>
+        <ion-datetime displayFormat="DD/MMM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+
+    <ion-item>
         <ion-label>เสียความทรงจำ</ion-label>
         <ion-checkbox color="secondary" checked="false"></ion-checkbox>
       </ion-item>
@@ -47,5 +52,5 @@
       บันทึกข้อมูล
 </button>
 <button ion-button color="danger" (click)="backhomee()">ยกเลิก</button>
-
+<button ion-button (click)="gosu()">ดูผลสรุป</button>
 </ion-content>

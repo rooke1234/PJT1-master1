@@ -10,6 +10,9 @@ import { P5Page } from '../p5/p5';
 import { P6Page } from '../p6/p6';
 import { P8Page } from '../p8/p8';
 import { P7Page } from '../p7/p7';
+import { ShowmePage } from '../showme/showme';
+import { ShowdrugPage } from '../showdrug/showdrug';
+import { ShowdocPage } from '../showdoc/showdoc';
 
 @Component({
   selector: 'page-sn1',
@@ -67,16 +70,16 @@ export class SN1 {
     convert.present();
   }
   info(){
-    this.navCtrl.push(InfouserPage);
+    this.navCtrl.push(ShowmePage);
   }
   p2(){
     this.navCtrl.push(P2Page);
   }
-  p3(){
-    this.navCtrl.push(P3Page);
+  showdrug(){
+    this.navCtrl.push(ShowdrugPage);
   }
-  p4(){
-    this.navCtrl.push(P4Page);
+  showdoc(){
+    this.navCtrl.push(ShowdocPage);
   }
   p5(){
     this.navCtrl.push(P5Page);

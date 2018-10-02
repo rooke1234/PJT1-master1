@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { SN1 } from '../sn1/sn1';
+import { ResultsymPage } from '../resultsym/resultsym';
 
 /**
  * Generated class for the P2Page page.
@@ -25,5 +26,8 @@ export class P2Page {
   }
   backhomee(){
     this.navCtrl.push(SN1);
+  }
+  gosu(){
+    this.navCtrl.push(ResultsymPage);
   }
 }

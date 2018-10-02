@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SN1 } from '../sn1/sn1';
+import { CreatethemePage } from '../createtheme/createtheme';
 
 /**
  * Generated class for the P6Page page.
@@ -21,5 +23,10 @@ export class P6Page {
   ionViewDidLoad() {
     console.log('ionViewDidLoad P6Page');
   }
-
+  backhomeee(){
+    this.navCtrl.push(SN1);
+  }
+  create(){
+    this.navCtrl.push(CreatethemePage);
+  }
 }

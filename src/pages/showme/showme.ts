@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SN1 } from '../sn1/sn1';
+import { InfouserPage } from '../infouser/infouser';
 
 /**
- * Generated class for the P4Page page.
+ * Generated class for the ShowmePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +12,18 @@ import { SN1 } from '../sn1/sn1';
 
 @IonicPage()
 @Component({
-  selector: 'page-p4',
-  templateUrl: 'p4.html',
+  selector: 'page-showme',
+  templateUrl: 'showme.html',
 })
-export class P4Page {
+export class ShowmePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad P4Page');
+    console.log('ionViewDidLoad ShowmePage');
   }
-  backhomee(){
-    this.navCtrl.push(SN1);
+  backhome(){
+    this.navCtrl.push(InfouserPage);
   }
 }

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SN1 } from '../sn1/sn1';
+import { P3Page } from '../p3/p3';
 
 /**
- * Generated class for the P4Page page.
+ * Generated class for the ShowdrugPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +11,18 @@ import { SN1 } from '../sn1/sn1';
 
 @IonicPage()
 @Component({
-  selector: 'page-p4',
-  templateUrl: 'p4.html',
+  selector: 'page-showdrug',
+  templateUrl: 'showdrug.html',
 })
-export class P4Page {
+export class ShowdrugPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad P4Page');
+    console.log('ionViewDidLoad ShowdrugPage');
   }
-  backhomee(){
-    this.navCtrl.push(SN1);
+  gotop3(){
+    this.navCtrl.push(P3Page);
   }
 }

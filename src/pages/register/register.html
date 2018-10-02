@@ -17,35 +17,42 @@
   <ion-list>
 
     <ion-item>
-      <ion-label floating>Username</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label floating>Confirm Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-label><ion-icon name="person"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="userData.name" placeholder="ชื่อ-นามสกุล" type="text"></ion-input>
+      
     </ion-item>
 
     <ion-item>
-      <ion-label floating>E-mail</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label><ion-icon name="ios-people"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="userData.username" placeholder="ชื่อผู้ใช้งาน" type="text"></ion-input>
+      
+    </ion-item>
+  
+    <ion-item>
+      <ion-label><ion-icon name="lock"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="userData.password" placeholder="รหัสผ่าน (อย่างน้อย 6 ตัวอักษร)" type="password"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label><ion-icon name="lock"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="userData.confirmPassword" placeholder="ยืนยันรหัสผ่าน" type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label><ion-icon name="ios-at"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="userData.email" placeholder="อีเมลล์" type="email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>ประเภทผู้ใช้งาน</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">ผู้ป่วยและผู้ดูแล</ion-option>
-        <ion-option value="n64">คุณหมอ</ion-option>
+      <ion-select [(ngModel)]="userData.status">
+        <ion-option value="patient">ผู้ป่วยและผู้ดูแล</ion-option>
+        <ion-option value="doctor">คุณหมอ</ion-option>
        
       </ion-select>
     </ion-item>
   
   </ion-list>
-  <button ion-button block color="secondary">ยืนยันสมัคร</button>
+  <button ion-button block color="secondary" (click)="register()">ยืนยันสมัคร</button>
   <button ion-button block color="danger" (click)="backhome()">ยกเลิก</button>
 </ion-content>
