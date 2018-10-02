@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { SN1 } from '../sn1/sn1';
+import { ShowmePage } from '../showme/showme';
 
 /**
  * Generated class for the InfouserPage page.
@@ -24,6 +25,6 @@ export class InfouserPage {
     console.log('ionViewDidLoad InfouserPage');
   }
   goHome(){
-    this.navCtrl.push(SN1);
+    this.navCtrl.push(ShowmePage);
   }
 }

@@ -7,21 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ประวัติส่วนตัว</ion-title>
+    <ion-title>แก้ไข</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding text-center>
+    <button ion-button color="secondary">อัพโหลดรูป</button>
+
     <ion-item >
-        <ion-input placeholder="ชื่อจริง"></ion-input>
-        <ion-input placeholder="นามสกุล"></ion-input>
+        <ion-input placeholder="ชื่อ-นามสกุล"></ion-input>
+      
       </ion-item>
       
       <ion-item>
         <ion-label>เพศ</ion-label>
-        <ion-select [(ngModel)]="gaming">
+        <ion-select [(ngModel)]="gender">
           <ion-option value="nes">ชาย</ion-option>
           <ion-option value="n64">หญิง</ion-option>
         </ion-select>
@@ -50,6 +52,10 @@
         <ion-item>
             <ion-input placeholder="หมอประจำตัว"></ion-input>
         </ion-item>
+
+        <ion-item>
+          <ion-input placeholder="เบอร์โทรญาติสนิท"></ion-input>
+      </ion-item>
 
           <button ion-button round (click)="goHome()" icon-start>
               <ion-icon>  </ion-icon>  บันทึก

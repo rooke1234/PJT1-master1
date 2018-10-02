@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SN1 } from '../sn1/sn1';
+import { P2Page } from '../p2/p2';
+
 
 /**
- * Generated class for the P4Page page.
+ * Generated class for the ResultsymPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,18 +12,18 @@ import { SN1 } from '../sn1/sn1';
 
 @IonicPage()
 @Component({
-  selector: 'page-p4',
-  templateUrl: 'p4.html',
+  selector: 'page-resultsym',
+  templateUrl: 'resultsym.html',
 })
-export class P4Page {
+export class ResultsymPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad P4Page');
+    console.log('ionViewDidLoad ResultsymPage');
   }
-  backhomee(){
-    this.navCtrl.push(SN1);
+  gop2(){
+    this.navCtrl.push(P2Page);
   }
 }
